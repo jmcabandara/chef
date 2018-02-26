@@ -1,6 +1,6 @@
 #
 # Author:: Lamont Granquist (<lamont@chef.io>)
-# Copyright:: Copyright 2014-2016, Chef Software Inc.
+# Copyright:: Copyright 2014-2018, Chef Software Inc.
 # License:: Apache License, Version 2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -589,6 +589,7 @@ describe Chef::ProviderResolver do
         solaris_user:           [ Chef::Resource::User::SolarisUser, Chef::Provider::User::Solaris ],
         windows_user:           [ Chef::Resource::User::WindowsUser, Chef::Provider::User::Windows ],
         whyrun_safe_ruby_block: [ Chef::Resource::WhyrunSafeRubyBlock, Chef::Provider::WhyrunSafeRubyBlock ],
+        yum_package:            [ Chef::Resource::YumPackage, Chef::Provider::Package::Yum ],
 
         # We want to check that these are unsupported:
         apt_package: nil,
@@ -601,7 +602,6 @@ describe Chef::ProviderResolver do
         rpm_package: nil,
         smartos_package: nil,
         solaris_package: nil,
-        yum_package: nil,
         windows_package: nil,
         windows_service: nil,
 
@@ -611,7 +611,6 @@ describe Chef::ProviderResolver do
           pacman_package:  [ Chef::Resource::PacmanPackage, Chef::Provider::Package::Pacman ],
           paludis_package: [ Chef::Resource::PaludisPackage, Chef::Provider::Package::Paludis ],
           rpm_package:     [ Chef::Resource::RpmPackage, Chef::Provider::Package::Rpm ],
-          yum_package:     [ Chef::Resource::YumPackage, Chef::Provider::Package::Yum ],
 
           "debian" => {
             ifconfig: [ Chef::Resource::Ifconfig, Chef::Provider::Ifconfig::Debian ],
