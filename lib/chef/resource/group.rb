@@ -28,7 +28,7 @@ class Chef
       allowed_actions :create, :remove, :modify, :manage
       default_action :create
 
-      property :group_name, String, name_property: true
+      property :group_name, String, identity: true, name_property: true
       property :gid, [ String, Integer ]
       property :excluded_members, [ Array, String],
                coerce: proc { |x| x.is_a?(String) ? x.split(",") : x },
