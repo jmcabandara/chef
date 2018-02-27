@@ -16,7 +16,7 @@
 # limitations under the License.
 
 require "chef/json_compat"
-require "win32ole"
+require "win32ole" if RUBY_PLATFORM =~ /mswin|mingw32|windows/
 
 class Chef
   module Mixin
